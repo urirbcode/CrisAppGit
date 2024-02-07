@@ -65,7 +65,7 @@ button:hover {
     #app {
         padding: 1rem;
         margin: 1rem auto;
-        max-width: 90%; /* Allow the container to be more fluid */
+        max-width: 70%; /* Allow the container to be more fluid */
     }
 
     /* Adjust button and select element sizes for smaller screens */
@@ -106,7 +106,7 @@ button:hover {
 .flex-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 50vh; /* Full viewport height */
 }
 
 /* Main content styling */
@@ -118,4 +118,25 @@ main {
 /* Footer styling */
 footer {
     flex-shrink: 0; /* Prevent the footer from shrinking */
+}
+
+/* Navigation bar styling with smaller font and more left margin */
+nav {
+    background-color: #0056b3; /* Match the button color for consistency */
+    padding: 0.75rem 0; /* Vertical padding */
+    margin-bottom: 2rem; /* Space below the nav bar */
+}
+
+nav a {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    color: #ffffff; /* White text for legibility */
+    text-decoration: none; /* No underline for a clean look */
+    padding: 0.5rem 1rem; /* Padding for clickable area */
+    font-size: 0.8rem; /* Smaller font size for the navigation links */
+    margin-left: 1rem;
+}
+
+nav a:hover {
+    background-color: #004494; /* Slightly darker blue on hover */
+    border-radius: 0.25rem; /* Rounded corners for hover effect */
 }
