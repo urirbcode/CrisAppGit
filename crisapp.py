@@ -1,9 +1,17 @@
 from flask import Flask, request, redirect, url_for, render_template, session
 from flask_sqlalchemy import SQLAlchemy
 from tabulate import tabulate
+import os
+from flask_talisman import Talisman
+
+crisapp = Flask(__name__)
+Talisman(crisapp)
+
 
 crisapp = Flask(__name__)
 crisapp.secret_key = '123'
+crisapp.secret_key = os.getenv('SECRET_KEY', 'cris123')
+
 
 crisapp.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///company_selection.db'
 crisapp.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -107,5 +115,5 @@ def already_selected():
 
 
 if __name__ == '__main__': 
-    crisapp.run(debug=True)
+    crisapp.run(debug=False)
     
