@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Company Selection System{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <!-- You can add your own stylesheet here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Welcome to the Company Selection System for Cris's Class{% endblock %}</h1>
+    </header>
+
+    <nav>
+        <!-- Navigation items if needed -->
+    </nav>
+
+    <main>
+        {% block content %}
+        <div id="app">
+            <form action="{{ url_for('index') }}" method="post">
+                <button type="submit" id="Proceed">Make my selection</button>
+            </form>
+        </div>
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

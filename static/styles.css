@@ -1,0 +1,56 @@
+/* General body styling */
+body {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    background: #f4f4f9; /* Muted background for a university-like feel */
+    color: #495057; /* Dark grey for text for better readability */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main application container styling for clear readability */
+#app {
+    background-color: #ffffff; /* Solid white background */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+    max-width: 36rem;
+    margin: 2rem auto;
+}
+
+/* Styling for form elements */
+select, button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #dcdfe6; /* Slightly darker border for better definition */
+    background: #f9f9f9; /* Light grey background for inputs */
+    color: #495057; /* Dark grey text inside inputs */
+}
+
+/* Button specific styling for higher contrast */
+button {
+    background-color: #0056b3; /* University-inspired blue for the button */
+    color: #ffffff; /* White text for the button */
+    font-size: 1rem;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #004494; /* Slightly darker blue on hover */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* University logo container for proper placement and visibility */
+#logo-container {
+    padding-top: 2rem;
+}
+
+/* University logo specific styling */
+#university-logo {
+    max-width: 10rem; /* Logo width */
+    background-color: #ffffff; /* White background to accommodate red/white logo */
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Adding a shadow for depth */
+}

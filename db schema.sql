@@ -1,0 +1,20 @@
+BEGIN TRANSACTION;
+INSERT INTO "Team" ("id","name","seminar","company") VALUES (4,'Team 1',101,NULL),
+ (5,'Team 2',101,NULL),
+ (6,'Team 3',101,NULL),
+ (7,'Team 4',101,NULL),
+ (8,'Team 5',101,NULL),
+ (9,'Team 6',101,NULL),
+ (10,'Team 1',102,NULL),
+ (11,'Team 2',102,NULL),
+ (12,'Team 3',102,NULL),
+ (13,'Team 4',102,NULL),
+ (14,'Team 5',102,NULL),
+ (15,'Team 6',102,NULL),
+ (16,'Team 1',103,NULL),
+ (17,'Team 2',103,NULL),
+ (18,'Team 3',103,NULL),
+ (19,'Team 4',103,NULL),
+ (20,'Team 5',103,NULL),
+ (21,'Team 6',103,NULL);
+COMMIT;

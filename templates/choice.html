@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Select Your Company {% endblock %}
+
+{% block content %}
+
+<h3> You are in seminar {{session['seminar']}} and representing {{session['team']}}</h3>
+
+<div id="app">
+    <form action="/choice" method="post">
+  
+      <div id="company-selection">
+          <label for="company"> Select your Company: </label>
+          <select id="company" name="company">
+              <option value="" disabled selected> Select your company</option> 
+              {% for company in available_companies %}
+                <option value="{{company}}">{{company}}</option>
+               {%endfor%}
+          </select>
+      </div>
+      <button type="submit" id="submit-company">Submit</button>
+    </form>
+</div>   
+
+{% endblock %}
+

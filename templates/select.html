@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} Select Your Company {% endblock %}
+<!--we override the title block and the content block with this child template stuff -->
+
+{% block content %}
+
+<div id="app">
+  <form action="/select" method="post">
+
+    <div id="seminar-selection">
+        <label for="seminar"> Select your seminar Group: </label>
+        <select id="seminar" name="seminar">
+            <option value="" disabled selected> Select your seminar group</option> 
+            <option value="101">101</option>
+            <option value="102">102</option>
+            <option value="103">103</option>
+        </select>
+    </div>
+
+    <div id="team-selection">
+        <label for="team"> Select your team: </label>
+        <select id="team" name="team">
+            <option value="" disabled selected>Select your team</option>
+            <option value="Team 1">Team 1</option>
+            <option value="Team 2">Team 2</option>
+            <option value="Team 3">Team 3</option>
+            <option value="Team 4">Team 4</option>
+            <option value="Team 5">Team 5</option>
+            <option value="Team 6">Team 6</option>
+        </select>
+    </div>
+    <button type="submit" id="submit-seminar_team">Submit</button>
+  </form>
+</div>    
+
+{% endblock%}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Information Updated {% endblock %}
+
+{% block content %}
+
+<h1>Confirmed! You've picked your company</h1>
+<h3> You are in seminar {{session['seminar']}} and representing {{session['team']}}. You picked company {{session['company']}}</h3>
+
+<div id="app">
+{{ html_table|safe }}
+</div>
+
+{% endblock %}
