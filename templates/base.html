@@ -12,25 +12,23 @@
     <header>
         <h1>{% block header %}Welcome to the Company Selection System for Cris's Class{% endblock %}</h1>
     </header>
+    <div class="flex-container">
+        <main>
+            {% block content %}
+            <div id="app">
+                <form action="{{ url_for('index') }}" method="post">
+                    <button type="submit" id="Proceed">Make my selection</button>
+                </form>
+            </div>
+            {% endblock %}
+        </main>
 
-    <nav>
-        <!-- Navigation items if needed -->
-    </nav>
-
-    <main>
-        {% block content %}
-        <div id="app">
-            <form action="{{ url_for('index') }}" method="post">
-                <button type="submit" id="Proceed">Make my selection</button>
-            </form>
-        </div>
-        {% endblock %}
-    </main>
-
-    <footer>
-        <!-- Footer content goes here -->
-    </footer>
-
+        <footer>
+            <div id="logo-container">
+                <img id="university-logo" src="{{ url_for('static', filename='logoupf.png') }}" alt="UPF Logo">
+            </div>
+        </footer>
+    </div>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

@@ -6,6 +6,11 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
 }
 
 /* Main application container styling for clear readability */
@@ -53,4 +58,64 @@ button:hover {
     padding: 0.5rem;
     border-radius: 0.25rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Adding a shadow for depth */
+}
+
+/* Add a media query for tablet devices */
+@media (max-width: 768px) {
+    #app {
+        padding: 1rem;
+        margin: 1rem auto;
+        max-width: 90%; /* Allow the container to be more fluid */
+    }
+
+    /* Adjust button and select element sizes for smaller screens */
+    select, button {
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    /* Adjust the university logo size for smaller screens */
+    #university-logo {
+        max-width: 8rem; /* Smaller logo width */
+    }
+}
+
+/* Add a media query for mobile devices */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.9rem; /* Slightly smaller font size for mobile readability */
+    }
+
+    #app {
+        padding: 0.5rem;
+        margin: 0.5rem auto;
+        max-width: 100%; /* Full width on very small screens */
+    }
+
+    /* Further adjust button and select sizes for mobile screens */
+    select, button {
+        padding: 0.4rem;
+    }
+
+    /* Further adjust the university logo size for mobile screens */
+    #university-logo {
+        max-width: 6rem; /* Even smaller logo width for mobile screens */
+    }
+}
+/* Flex container styling */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Main content styling */
+main {
+    flex-grow: 1; /* Grow to fill available space */
+    flex: 0.25 0 auto;
+}
+
+/* Footer styling */
+footer {
+    flex-shrink: 0; /* Prevent the footer from shrinking */
 }

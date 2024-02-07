@@ -87,48 +87,23 @@ def choice():
         
         else:
             return "Team not found"
-    
+
+def generate_team_data_table():
+    teams = Team.query.all()
+    team_data = {(team.name, team.seminar, team.company) for team in teams}
+    team_data = sorted(team_data, key=lambda x: (x[1], x[0]))
+    table_header = ['Team', 'Seminar', 'Company']
+    return tabulate(team_data, headers=table_header, tablefmt='html')
+
 @crisapp.route('/confirmation')
 def confirmation():
-    teams = Team.query.all()
-
-    # Create a list of tuples containing the team data
-    team_data = [(team.name, team.seminar, team.company) for team in teams]
-
-    # Group the data by the unique values in the table
-    team_data = list(set(team_data))
-
-    # Sort the data by seminar group and then by team
-    team_data = sorted(team_data, key=lambda x: (x[1], x[0]))
-
-    # Create a table header
-    table_header = ['Team', 'Seminar', 'Company']
-
-    # Render the table as HTML
-    html_table = tabulate(team_data, headers=table_header, tablefmt='html')
-
-    return render_template('confirmation.html', teams=teams, html_table=html_table)
+    html_table = generate_team_data_table()
+    return render_template('confirmation.html', html_table=html_table)
 
 @crisapp.route('/already_selected')
 def already_selected():
-    teams = Team.query.all()
-
-    # Create a list of tuples containing the team data
-    team_data = [(team.name, team.seminar, team.company) for team in teams]
-
-    # Group the data by the unique values in the table
-    team_data = list(set(team_data))
-
-    # Sort the data by seminar group and then by team
-    team_data = sorted(team_data, key=lambda x: (x[1], x[0]))
-
-    # Create a table header
-    table_header = ['Team', 'Seminar', 'Company']
-
-    # Render the table as HTML
-    html_table = tabulate(team_data, headers=table_header, tablefmt='html')
-
-    return render_template('already_selected.html', teams=teams, html_table=html_table)
+    html_table = generate_team_data_table()
+    return render_template('already_selected.html', html_table=html_table)
 
 
 if __name__ == '__main__': 
